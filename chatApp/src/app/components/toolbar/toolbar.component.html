@@ -1,0 +1,82 @@
+<nav class="nav-extended">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a (click)="GoToHome()" class="brand-logo">Chat App</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="dropdown-button dropdown-trigger" data-target="dropdown">
+          <span class="mybadge" *ngIf="count.length > 0">{{ count.length }}</span>
+          <i class="material-icons">language</i>
+          <ul id="dropdown" class="dropdown-content col s12 mydropdown">
+            <li class="collection-item avatar" *ngFor="let data of notifications">
+              <img src="http://placehold.it/50x50" class="circle notification" />
+              <span [ngClass]="data.read ? 'isRead' : 'unread'">{{ data.message }}</span>
+              <p class="time">{{ TimeFromNow(data.created) }}</p>
+            </li>
+            <li *ngIf="notifications.length > 0">
+              <p>
+                <a class="mark btn" (click)="markAll()">Mark all as read</a>
+              </p>
+            </li>
+            <li *ngIf="notifications.length == 0">
+              <p class="text">No notification</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          &nbsp;&nbsp;&nbsp;
+        </li>
+        <li class="dropdown-button dropdown-trigger1" data-target="dropdown1">
+          <span class="mybadge" *ngIf="msgNumber > 0">{{ msgNumber }}</span>
+          <i class="material-icons">message</i>
+          <ul id="dropdown1" class="dropdown-content col s12 mydropdown">
+            <li
+              class="collection-item avatar"
+              *ngFor="let chat of chatList"
+              (click)="gotoChatPage(chat.receiverId.username)"
+            >
+              <img src="http://placehold.it/50x50" class="circle notification" />
+              <span class="title">
+                {{ chat.receiverId.username }}
+              </span>
+              <a class="title secondary-content date">
+                {{ MessageDate(chat.msgId.message[chat.msgId.message.length - 1].createdAt) }}
+              </a>
+              <p class="chat">
+                {{ chat.msgId.message[chat.msgId.message.length - 1].body }}
+                <a
+                  class="secondary-content ownicon1"
+                  *ngIf="
+                    !chat.msgId.message[chat.msgId.message.length - 1].isRead &&
+                    chat.receiverId.username !== chat.msgId.message[chat.msgId.message.length - 1].receiverName
+                  "
+                >
+                  <i class="material-icons">brightness_1</i>
+                </a>
+                <a class="secondary-content ownicon2" *ngIf="chat.msgId.message[chat.msgId.message.length - 1].isRead">
+                  <i class="material-icons">panorama_fish_eye</i>
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <a class="mark btn" (click)="markAllMessages()">Mark all as read</a>
+              </p>
+            </li>
+            <!-- <li *ngIf="msgNumber == 0">
+              <p class="text">No messages</p>
+            </li>-->
+          </ul>
+        </li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <div class="nav-div">
+        <img class="circle responsive-img" width="50" src="http://placehold.it/50x50" />
+      </div>
+      <h1 class="profile-name">{{ user.username }}</h1>
+      <!--<p class="user-text">This is a test</p>-->
+    </div>
+  </div>
+</nav>

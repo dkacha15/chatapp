@@ -1,0 +1,161 @@
+.responsive-img {
+  border: 10px solid #9dcdf3;
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+
+.circle {
+  display: block !important;
+  margin: auto !important;
+}
+
+.notification {
+  margin-left: 5px !important;
+  margin-top: 5px !important;
+}
+
+.nav-div {
+  display: block;
+  margin-left: 110px;
+}
+
+.profile-name {
+  margin-top: 0px !important;
+  text-align: center !important;
+}
+
+.user-text {
+  font-size: 20px;
+  margin-top: -30px !important;
+  text-align: center;
+}
+
+.nav-extended {
+  background-color: #64b5f6;
+}
+
+.nav-content {
+  background-color: #64b5f6;
+  height: 390px;
+}
+
+.brand-logo {
+  font-weight: bold;
+}
+
+.time {
+  margin-bottom: 10px !important;
+  font-style: italic;
+}
+
+.text {
+  text-align: center;
+}
+
+.secondary-content {
+  margin-top: -5px !important;
+}
+
+.markAll {
+  color: #64b5f6;
+  background: inherit !important;
+}
+
+.icon {
+  color: #ffffff !important;
+}
+
+.mybadge {
+  background-color: red;
+  border-radius: 10px;
+  font-weight: bold;
+  float: right;
+  line-height: 22px;
+  min-width: 1rem;
+  text-align: center;
+}
+
+.material-icons {
+  display: inline;
+  cursor: pointer;
+}
+
+.mydropdown {
+  width: 400px !important;
+}
+
+.time {
+  margin-left: 70px !important;
+  margin-top: -15px !important;
+  font-style: italic;
+}
+
+.circle {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.collection-item {
+  height: 65px;
+}
+
+.isRead {
+  margin-left: 50px;
+  margin-top: -65px;
+  font-size: 18px;
+  color: #64b5f6;
+}
+
+.unread {
+  margin-left: 50px;
+  margin-top: -65px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #64b5f6;
+}
+
+.text {
+  color: #64b5f6;
+  font-weight: bold;
+}
+
+.mark {
+  font-weight: bold;
+  text-align: right;
+  margin-left: 200px;
+}
+
+.title {
+  margin-left: 50px;
+  margin-top: -60px;
+  font-size: 18px;
+  color: #64b5f6;
+  font-weight: bold;
+}
+
+.chat {
+  margin-left: 70px !important;
+  margin-top: -15px !important;
+}
+
+.date {
+  margin-top: -55px !important;
+  margin-right: 30px !important;
+  font-size: 15px !important;
+  color: #64b5f6;
+  font-weight: 600 !important;
+}
+
+.ownicon1 {
+  margin-top: -40px !important;
+  margin-right: 40px !important;
+  color: #64b5f6;
+}
+
+.ownicon2 {
+  margin-top: -40px !important;
+  margin-right: 40px !important;
+  color: #64b5f6;
+}
