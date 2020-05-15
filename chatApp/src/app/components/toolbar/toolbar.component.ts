@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 import * as M from 'materialize-css';
@@ -13,7 +13,8 @@ import { MessageService } from 'src/app/services/message.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit, AfterViewInit {
+  @Output() onlineUsers = new EventEmitter();
   user: any;
   notifications = [];
   socket: any;
@@ -45,6 +46,8 @@ export class ToolbarComponent implements OnInit {
       alignment: 'right',
     });
 
+    this.socket.emit('online', { room: 'global', user: this.user.username });
+
     this.getUser();
     this.socket.on(
       'refreshPage',
@@ -58,6 +61,12 @@ export class ToolbarComponent implements OnInit {
         }
       }
     );
+  }
+
+  ngAfterViewInit() {
+    this.socket.on('usersOnline', (data) => {
+      this.onlineUsers.emit(data);
+    });
   }
 
   getUser() {
