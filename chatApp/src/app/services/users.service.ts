@@ -56,4 +56,12 @@ export class UsersService {
   setDefaultImage(imageId, imageVersion): Observable<any> {
     return this.http.get(`${BASEURL}/set-default-image/${imageId}/${imageVersion}`);
   }
+
+  viewProfileNotification(id): Observable<any> {
+    return this.http.post(`${BASEURL}/user/view-profile`, { id });
+  }
+
+  changePassword(body): Observable<any> {
+    return this.http.post(`${BASEURL}/change-password`, body);
+  }
 }

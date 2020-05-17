@@ -5,7 +5,7 @@
       alt=""
       class="circle"
     />
-    <span class="title">{{ post.username }}</span>
+    <span class="title" (click)="viewUser(post.username)">{{ post.username }}</span>
     <p class="time">
       {{ TimeFromNow(post.created) }}<br />
       <!--Country-->
@@ -14,12 +14,12 @@
   <div class="row">
     <div class="col s12">
       <div class="card">
-        <!--<div class="card-image">
+        <div class="card-image" *ngIf="post.imgId">
           <img
             class="postImage"
-            src="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src="https://res.cloudinary.com/dy6relv7v/image/upload/v{{ post.imgVersion }}/{{ post.imgId }}"
           />
-        </div>-->
+        </div>
         <div class="card-content">
           <p>{{ post.post }}</p>
         </div>

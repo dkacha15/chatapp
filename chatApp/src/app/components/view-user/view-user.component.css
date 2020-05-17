@@ -1,0 +1,78 @@
+.card_image {
+  width: 200px;
+  height: auto !important;
+  top: 20px !important;
+  left: 20px !important;
+}
+
+.tabs a {
+  color: #64b5f6 !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tabs .col .s4 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.tabs .a .indicator {
+  background-color: #64b5f6;
+}
+
+.collection {
+  border: none !important;
+}
+
+.collection-item {
+  border: none !important;
+}
+
+.post {
+  font-weight: bold;
+  color: #64b5f6;
+}
+
+.time {
+  font-size: 14px;
+  color: #666565;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #64b5f6;
+}
+
+.imgCircle {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  margin: 0 auto !important;
+  top: 20px !important;
+}
+
+.imgDiv {
+  height: 179px !important;
+  border: 1px solid #e7e7e7;
+}
+
+.ownCard {
+  width: 200px !important;
+}
+
+.cityName {
+  font-size: 20px !important;
+  margin-top: 0px !important;
+}
+
+.profile {
+  width: 200px !important;
+}
+
+h4 {
+  color: #64bff6;
+  text-align: center;
+  font-size: 25px !important;
+  font-weight: bold;
+}

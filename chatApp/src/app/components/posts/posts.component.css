@@ -11,6 +11,7 @@
 .title {
   font-weight: bold;
   color: #64b5f6;
+  cursor: pointer !important;
 }
 
 .time {

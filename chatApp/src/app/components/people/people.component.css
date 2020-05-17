@@ -60,3 +60,7 @@
   color: #64bff6 !important;
   font-weight: bold;
 }
+
+.imgDiv {
+  cursor: pointer !important;
+}

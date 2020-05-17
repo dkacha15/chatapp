@@ -61,4 +61,8 @@ export class PostsComponent implements OnInit {
   OpenCommentBox(post) {
     this.router.navigate(['post', post._id]);
   }
+
+  viewUser(user) {
+    this.router.navigate([user]);
+  }
 }

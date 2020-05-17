@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s12 m4">
-    <a>
+    <a *ngIf="userData" [routerLink]="['', userData.username]">
       <span>Posts</span>
       <p class="num" *ngIf="userData">{{ userData.posts.length }}</p>
       <p class="num" *ngIf="!userData">0</p>
@@ -63,6 +63,13 @@
     <a [routerLink]="['/notifications']">
       <div>
         Notifications<a href="#!" class="secondary-content"><i class="material-icons">alarm</i></a>
+      </div>
+    </a>
+  </li>
+  <li class="collection-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+    <a [routerLink]="['/account', 'password']">
+      <div>
+        Change Password<a href="#!" class="secondary-content"><i class="material-icons">vpn_key</i></a>
       </div>
     </a>
   </li>

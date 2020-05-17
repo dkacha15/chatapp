@@ -3,6 +3,7 @@ import { UsersService } from 'src/app/services/users.service';
 import _ from 'lodash';
 import { TokenService } from 'src/app/services/token.service';
 import io from 'socket.io-client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -16,7 +17,7 @@ export class PeopleComponent implements OnInit {
   userArr = [];
   onlineusers = [];
 
-  constructor(private userService: UsersService, private tokenService: TokenService) {
+  constructor(private userService: UsersService, private tokenService: TokenService, private router: Router) {
     this.socket = io('http://localhost:3000');
   }
 
@@ -47,6 +48,18 @@ export class PeopleComponent implements OnInit {
     this.userService.followUser(user._id).subscribe((data) => {
       this.socket.emit('refresh', {});
     });
+  }
+
+  viewUser(user) {
+    this.router.navigate([user.username]);
+    if (this.loggedInUser.username !== user.username) {
+      this.userService.viewProfileNotification(user._id).subscribe(
+        (data) => {
+          this.socket.emit('refresh', {});
+        },
+        (err) => console.log(err)
+      );
+    }
   }
 
   checkInArray(arr, id) {
