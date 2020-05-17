@@ -8,7 +8,13 @@
           <i class="material-icons">language</i>
           <ul id="dropdown" class="dropdown-content col s12 mydropdown">
             <li class="collection-item avatar" *ngFor="let data of notifications">
-              <img src="http://placehold.it/50x50" class="circle notification" />
+              <img
+                src="https://res.cloudinary.com/dy6relv7v/image/upload/v{{ data.senderId.picVersion }}/{{
+                  data.senderId.picId
+                }}"
+                class="circle notification"
+                alt=""
+              />
               <span [ngClass]="data.read ? 'isRead' : 'unread'">{{ data.message }}</span>
               <p class="time">{{ TimeFromNow(data.created) }}</p>
             </li>
@@ -34,7 +40,12 @@
               *ngFor="let chat of chatList"
               (click)="gotoChatPage(chat.receiverId.username)"
             >
-              <img src="http://placehold.it/50x50" class="circle notification" />
+              <img
+                src="https://res.cloudinary.com/dy6relv7v/image/upload/v{{ chat.receiverId.picVersion }}/{{
+                  chat.receiverId.picId
+                }}"
+                class="circle notification"
+              />
               <span class="title">
                 {{ chat.receiverId.username }}
               </span>
@@ -73,7 +84,11 @@
     </div>
     <div class="nav-content">
       <div class="nav-div">
-        <img class="circle responsive-img" width="50" src="http://placehold.it/50x50" />
+        <img
+          class="circle responsive-img"
+          width="50"
+          src="https://res.cloudinary.com/dy6relv7v/image/upload/v{{ imageVersion }}/{{ imageId }}"
+        />
       </div>
       <h1 class="profile-name">{{ user.username }}</h1>
       <!--<p class="user-text">This is a test</p>-->

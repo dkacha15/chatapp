@@ -23,6 +23,7 @@ const posts = require("./routes/postRoutes");
 const users = require("./routes/userRoutes");
 const friends = require("./routes/friendsRoutes");
 const message = require("./routes/messageRoutes");
+const image = require("./routes/imageRoutes");
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
@@ -38,6 +39,7 @@ app.use("/api/chatapp", posts);
 app.use("/api/chatapp", users);
 app.use("/api/chatapp", friends);
 app.use("/api/chatapp", message);
+app.use("/api/chatapp", image);
 
 server.listen(3000, () => {
   console.log("Running on port 3000");

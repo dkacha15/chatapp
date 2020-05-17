@@ -12,6 +12,8 @@
 }
 
 .notification {
+  width: 50px !important;
+  height: 50px !important;
   margin-left: 5px !important;
   margin-top: 5px !important;
 }
