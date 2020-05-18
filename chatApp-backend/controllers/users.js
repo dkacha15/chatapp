@@ -66,7 +66,7 @@ module.exports = {
       {
         _id: req.body.id,
         "notifications.senderId": { $ne: req.user._id },
-        "notifications.created": { $ne: [dateValue, ""] },
+        //"notifications.created": { $ne: [dateValue, ""] },
       },
       {
         $push: {
