@@ -67,3 +67,8 @@ h4 {
   font-size: 18px;
   font-weight: bold;
 }
+
+.card-title {
+  color: #64bff6;
+  font-weight: bold;
+}

@@ -76,3 +76,8 @@ h4 {
   font-size: 25px !important;
   font-weight: bold;
 }
+
+.card-title {
+  color: #64b5f6;
+  font-weight: bold;
+}

@@ -34,7 +34,12 @@
       </div>
       <ul class="collection col s12 m10" *ngFor="let comment of commentsArray">
         <li class="collection-item avatar">
-          <img class="circle" src="http://placehold.it/50x50" />
+          <img
+            class="circle"
+            src="https://res.cloudinary.com/dy6relv7v/image/upload/v{{ comment.userId.picVersion }}/{{
+              comment.userId.picId
+            }}"
+          />
           <span class="title">{{ comment.username }}</span>
           <p class="time">{{ TimeFromNow(comment.createdAt) }}</p>
           <p class="postComment">{{ comment.comment }}</p>

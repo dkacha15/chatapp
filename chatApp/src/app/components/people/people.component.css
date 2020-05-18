@@ -64,3 +64,8 @@
 .imgDiv {
   cursor: pointer !important;
 }
+
+.card-title {
+  color: #64bff6;
+  font-weight: bold;
+}

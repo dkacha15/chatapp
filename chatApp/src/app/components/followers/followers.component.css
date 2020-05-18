@@ -71,5 +71,5 @@ h4 {
 .card-title {
   color: #64bff6;
   font-weight: bold;
-  text-align: center;
+  margin-top: -10px !important;
 }
