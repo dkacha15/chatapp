@@ -8,7 +8,7 @@
     <span class="title" (click)="viewUser(post.username)">{{ post.username }}</span>
     <p class="time">
       {{ TimeFromNow(post.created) }}<br />
-      <!--Country-->
+      @{{ post.user.city }},{{ post.user.country }}
     </p>
   </li>
   <div class="row">

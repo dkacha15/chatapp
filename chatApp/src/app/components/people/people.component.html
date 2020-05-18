@@ -23,6 +23,7 @@
                 {{ user.username }}
                 <i class="facircle material-icons" *ngIf="checkIfOnline(user.username)">brightness_1</i>
               </h3>
+              <p *ngIf="user.country">{{ user.city }},{{ user.country }}</p>
               <button class="btn" *ngIf="!checkInArray(userArr, user._id)" (click)="followUser(user)">Follow</button>
               <button class="btn disabled following" *ngIf="checkInArray(userArr, user._id)">Following</button>
               <a class="secondary-content" [routerLink]="['/chat', user.username]">

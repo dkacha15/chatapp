@@ -3,6 +3,7 @@ const Post = require("../models/postModels");
 const httpStatus = require("http-status-codes");
 const User = require("../models/userModels");
 const cloudinary = require("cloudinary");
+const request = require("request");
 
 cloudinary.config({
   cloud_name: "dy6relv7v",
@@ -98,6 +99,27 @@ module.exports = {
       const top = await Post.find({ totalLikes: { $gte: 2 } })
         .populate("user")
         .sort({ created: -1 });
+
+      const user = await User.findOne({ _id: req.user._id });
+      if (!user.city && !user.country) {
+        request(
+          "http://geolocation-db.com/json/",
+          { json: true },
+          async (err, res, body) => {
+            await User.update(
+              {
+                _id: req.user._id,
+              },
+              {
+                city: body.city,
+                state: body.state,
+                country: body.country_name,
+              }
+            );
+          }
+        );
+      }
+
       return res
         .status(httpStatus.OK)
         .json({ message: "All posts", posts, top });

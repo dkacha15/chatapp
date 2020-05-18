@@ -42,6 +42,9 @@ const userSchema = mongoose.Schema({
       imgVersion: { type: String, default: "" },
     },
   ],
+  city: { type: String, default: "" },
+  state: { type: String, default: "" },
+  country: { type: String, default: "" },
 });
 
 userSchema.statics.EncryptPassword = async function (password) {
